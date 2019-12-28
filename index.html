@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card deck</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+     <section class="koloda">
+       <div class="scene">
+           <div class="card">
+                <input type="checkbox" id="flip">
+                <label class="backfaces" for="flip"> 
+                  <div class="card__face card__face--front "><img src="shirt2.jpg"></div>
+                  <div class="card__face card__face--reverse">
+                      <div class="icon__clubs">
+                        <span class="icon__clubs--30 icon__clubs--30--left">8<br>&#9824;</span>
+                     </div>
+                     <div class="icon__clubs">
+                        <span class="icon__clubs--50">&#9824;</span>
+                        <span class="icon__clubs--50">&#9824;</span>
+                     </div>
+                     <div class="icon__clubs">
+                        <span class="icon__clubs--50">&#9824;</span>
+                        <span class="icon__clubs--50">&#9824;</span>
+                     </div>
+                     <div  class="icon__clubs">
+                        <span class="icon__clubs--50">&#9824;</span>
+                        <span class="icon__clubs--50">&#9824;</span>
+                     </div >
+                     <div class="icon__clubs">
+                        <span class="icon__clubs--50">&#9824;</span>
+                        <span class="icon__clubs--50">&#9824;</span>
+                     </div>
+                     <div class="icon__clubs">
+                         <span class="icon__clubs--30 icon__clubs--30--right">&#9824;<br>8</span>
+                     </div>
+                  </div>
+                </label>
+           </div>
+        </div> 
+           
+         <div class="scene">
+           <div class="card">
+               <input type="checkbox" id="flip1">
+               <label class="backfaces" for="flip1"> 
+                  <div class="card__face card__face--front"><img src="shirt2.jpg"></div>
+                  <div class="card__face card__face--reverse">
+                     <div class="icon__heart">
+                         <span class="icon__heart--30 icon__heart--30--left">5<br>&#9829;</span>
+                      </div>
+                      <div class="icon__heart">
+                          <span class="icon__heart--50">&#9829;</span>
+                          <span class="icon__heart--50">&#9829;</span>
+                       </div>
+                       <div class="icon__heart">
+                          <span class="icon__heart--50">&#9829;</span>
+                          <span class="icon__heart--50">&#9829;</span>
+                       </div>
+                       <div  class="icon__heart">
+                          <span class="icon__heart--50">&#9829;</span>
+                      </div >
+                      <div class="icon__heart">
+                          <span class="icon__heart--30 icon__heart--30--right">&#9829;<br>5</span>
+                     </div>
+                  </div>
+               </label>
+           </div>
+        </div>
+   
+        <div class="scene">
+             <div class="card">
+               <input type="checkbox" id="flip2">
+               <label class="backfaces" for="flip2">
+                   <div class="card__face card__face--front"><img src="shirt2.jpg"></div>
+                   <div class="card__face card__face--reverse"><img class="card__face--img" src="valet.png" alt="valet">
+                      <div class="icon__diamonds">
+                         <span class="icon__diamonds--30 icon__diamonds--30--left">J<br>&#9830;</span>
+                      </div>
+                      <div class="icon__diamonds">
+                        <span class="icon__diamonds--50 icon__diamonds--50--left">&#9830;</span>
+                      </div>
+                      <div class="icon__diamonds">
+                         <span class="icon__diamonds--50 icon__diamonds--50--right">&#9830;</span>
+                      </div>
+                      <div class="icon__diamonds"> 
+                         <span class="icon__diamonds--30 icon__diamonds--30--right">&#9830;<br>J</span>
+                     </div>
+                  </div>
+               </label>
+            </div>
+         </div>
+    </section>
+
+
+   </body>
+   </html>
+ 
+    
+    <script>
+
+    var card = document.querySelector('.card');
+    card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+    });
+    </script> 
+ 
+
+
+ 
+

@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+// @import 'slider';
+// @import 'socials';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    max-height: 100%;
+    margin: 0;
+    color: #444444;
+    font-family: 'Lato', sans-serif;
+}
+
+a, button {
+    transition: all .4s ease-in;
+}
+
+.koloda {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    background: linear-gradient(-145deg, rgb(230, 49, 49) 0%, rgb(86, 69, 163) 45%, red 75%, rgb(218, 67, 67) 85%, rgb(93, 212, 93) 100%);
+}
+
+
+
+ .scene {
+     width: 200px;
+     height: 260px;
+     perspective: 1000px;
+     border-radius: 5%;
+     margin: 50px 20px ;
+     transform-style: preserve-3d;
+     transform-origin: center left;
+    
+ }
+
+ input {
+     visibility: hidden;
+ }
+  
+ .card {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     transition: transform 3s;
+     transform-style: preserve-3d;
+     cursor: pointer;
+     transition: 1.7s linear;
+         &__face {
+         position: absolute;
+         overflow: hidden;
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 100%;
+         border-radius: 5%;
+         backface-visibility: hidden;
+         background-color: rgb(255, 255, 255);
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+             &--front {
+             border-radius: 5%;
+             transform: rotateY(0deg);
+             z-index: 2;
+             }
+             &--reverse {
+            transform: rotateY(-180deg);
+             padding: 5px;
+             border-radius: 5%;
+         }
+         &--img {
+             width: 50%;
+             height: 70%;
+             position: absolute;
+             top: 15%;
+             bottom: 15%;
+             left: 25%;
+             right: 25%;
+
+         
+         }
+     }
+             
+  }
+
+ .icon__clubs {
+      display: flex;
+      justify-content: center;
+      font-weight: 900;
+      &--30 {
+          font-size: 30px;
+          height: 30px;
+          position: absolute;
+         &--left {
+             top: 0;
+             left: 20px;
+          }
+          &--right {
+             right: 20px;
+             bottom: 40px;
+          }
+     }
+      &--50 {
+          font-size: 50px;
+          height: 50px;
+          margin: 4px 15px;
+                     
+      }
+
+      }
+
+      .icon__heart {
+         display: flex;
+         justify-content: center;
+         font-weight: 900;
+         color: red;
+         &--30 {
+             font-size: 30px;
+             height: 30px;
+             position: absolute;
+             &--left {
+                top: 0;
+                left: 20px;
+             }
+             &--right {
+                right: 20px;
+                bottom: 40px;
+             }
+        }
+         &--50 {
+             font-size: 50px;
+             height: 50px;
+             margin: 15px 15px;
+                        
+         }
+   
+         }
+
+         .icon__diamonds {
+             display: flex;
+             justify-content: center;
+             font-weight: 900;
+            color: red;
+             &--30 {
+                 font-size: 30px;
+                 height: 30px;
+                 position: absolute;
+                 font-weight: 900;
+                 &--left {
+                    top: 0;
+                    left: 20px;
+                 }
+                 &--right {
+                    right: 20px;
+                    bottom: 40px;
+                 }
+            }
+             &--50 {
+                 font-size: 50px;
+                 height: 50px;
+                 &--left {
+                   margin-right: 140px;
+                     margin-top: 20px;
+                 }
+                 &--right {
+                     margin-left: 140px;
+                     margin-top: 100px;
+                 }
+              }
+       
+         }
+
+    #flip:checked+.backfaces .card__face--front{
+          transform: translateX(-50%) rotateY(180deg);
+          transition: all 1s ease-in;
+    }
+    #flip:checked+.backfaces .card__face--reverse{
+          transform:  rotateY(-360deg);
+          transition: all 1s ease-in;
+      }
+      
+
+    #flip1:checked+.backfaces .card__face--front{
+        transform: translateX(-50%) rotateY(180deg);
+          transition: all 1s ease-in;
+     }
+    #flip1:checked+.backfaces .card__face--reverse{
+        transform:  rotateY(-360deg);
+        transition: all 1s ease-in;
+     }
+
+    #flip2:checked+.backfaces .card__face--front{
+        transform: translateX(-50%) rotateY(180deg);
+          transition: all 1s ease-in;
+         
+     }
+    #flip2:checked+.backfaces .card__face--reverse{
+        transform:  rotateY(-360deg);
+        transition: all 1s ease-in;  
+}
+ 
+ 
+
+
+
+// Еще один способ переворота карт без js
+// .backfaces {
+//     width: 120px;
+//     height: 120px;
+//     position: absolute;
+//     top:0;
+//     left:0;
+//     border: 1px solid red;
+//     overflow: hidden;
+// }
+// .front, .back {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 120px;
+//     height: 120px;
+//     backface-visibility: hidden;
+//     transition: 0.5s;
+//     position: absolute;
+// }
+// .back {
+//     background-color: #f00;
+// }
+// .front {
+//     background-color: #00f;
+// }
+// .backfaces .back{
+//     transform:rotateY(180deg);
+// }
+
+// #flip:checked+.backfaces .front{
+//     transform:rotateY(180deg);
+// }
+// #flip:checked+.backfaces .back{
+//     transform:rotateY(360deg);
+// }
