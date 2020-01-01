@@ -190,7 +190,6 @@ a, button {
           transition: all 1s ease-in;
       }
       
-
     #flip1:checked+.backfaces .card__face--front{
         transform: translateX(-50%) rotateY(180deg);
           transition: all 1s ease-in;
@@ -212,41 +211,3 @@ a, button {
  
  
 
-
-
-// Еще один способ переворота карт без js
-// .backfaces {
-//     width: 120px;
-//     height: 120px;
-//     position: absolute;
-//     top:0;
-//     left:0;
-//     border: 1px solid red;
-//     overflow: hidden;
-// }
-// .front, .back {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 120px;
-//     height: 120px;
-//     backface-visibility: hidden;
-//     transition: 0.5s;
-//     position: absolute;
-// }
-// .back {
-//     background-color: #f00;
-// }
-// .front {
-//     background-color: #00f;
-// }
-// .backfaces .back{
-//     transform:rotateY(180deg);
-// }
-
-// #flip:checked+.backfaces .front{
-//     transform:rotateY(180deg);
-// }
-// #flip:checked+.backfaces .back{
-//     transform:rotateY(360deg);
-// }
