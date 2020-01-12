@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    max-height: 100%;
+    min-height: 100%;
     margin: 0;
     color: #444444;
     font-family: 'Lato', sans-serif;
@@ -27,10 +27,12 @@ a, button {
 }
 
 .koloda {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-around;
-    margin: 50px;
-    background: linear-gradient(-145deg, rgb(230, 49, 49) 0%, rgb(86, 69, 163) 45%, red 75%, rgb(218, 67, 67) 85%, rgb(93, 212, 93) 100%);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: radial-gradient(rgb(19, 59, 25) 0%, rgb(8, 90, 65) 45%, rgb(8, 90, 65) 65%, rgb(40, 167, 135) 75%, rgb(10, 26, 12) 85%, rgb(93, 212, 93) 100%);
 }
 
 
@@ -73,11 +75,13 @@ a, button {
              border-radius: 5%;
              transform: rotateY(0deg);
              z-index: 2;
+             transition: all .7s ease-in-out;
              }
              &--reverse {
-            transform: rotateY(-180deg);
+             transform: rotateY(-180deg);
              padding: 5px;
              border-radius: 5%;
+             transition: all .7s ease-in-out;
          }
          &--img {
              width: 50%;
@@ -181,33 +185,16 @@ a, button {
        
          }
 
-    #flip:checked+.backfaces .card__face--front{
+   .card input:checked+.backfaces .card__face--front{
           transform: translateX(-50%) rotateY(180deg);
-          transition: all 1s ease-in;
+          transition: all .7s ease-in-out;
     }
-    #flip:checked+.backfaces .card__face--reverse{
+    .card input:checked+.backfaces .card__face--reverse{
           transform:  rotateY(-360deg);
-          transition: all 1s ease-in;
+          transition: all .7s ease-in-out;
       }
       
-    #flip1:checked+.backfaces .card__face--front{
-        transform: translateX(-50%) rotateY(180deg);
-          transition: all 1s ease-in;
-     }
-    #flip1:checked+.backfaces .card__face--reverse{
-        transform:  rotateY(-360deg);
-        transition: all 1s ease-in;
-     }
 
-    #flip2:checked+.backfaces .card__face--front{
-        transform: translateX(-50%) rotateY(180deg);
-          transition: all 1s ease-in;
-         
-     }
-    #flip2:checked+.backfaces .card__face--reverse{
-        transform:  rotateY(-360deg);
-        transition: all 1s ease-in;  
-}
  
  
 

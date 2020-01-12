@@ -317,7 +317,7 @@ html {
   font-size: 10px; }
 
 body {
-  max-height: 100%;
+  min-height: 100%;
   margin: 0;
   color: #444444;
   font-family: 'Lato', sans-serif; }
@@ -328,14 +328,20 @@ a, button {
   transition: all .4s ease-in; }
 
 .koloda {
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  margin: 50px;
-  background: -o-linear-gradient(235deg, #e63131 0%, #5645a3 45%, red 75%, #da4343 85%, #5dd45d 100%);
-  background: linear-gradient(-145deg, #e63131 0%, #5645a3 45%, red 75%, #da4343 85%, #5dd45d 100%); }
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background: -o-radial-gradient(#133b19 0%, #085a41 45%, #085a41 65%, #28a787 75%, #0a1a0c 85%, #5dd45d 100%);
+  background: radial-gradient(#133b19 0%, #085a41 45%, #085a41 65%, #28a787 75%, #0a1a0c 85%, #5dd45d 100%); }
 
 .scene {
   width: 200px;
@@ -386,12 +392,18 @@ input {
       border-radius: 5%;
       -webkit-transform: rotateY(0deg);
       transform: rotateY(0deg);
-      z-index: 2; }
+      z-index: 2;
+      -webkit-transition: all .7s ease-in-out;
+      -o-transition: all .7s ease-in-out;
+      transition: all .7s ease-in-out; }
     .card__face--reverse {
       -webkit-transform: rotateY(-180deg);
       transform: rotateY(-180deg);
       padding: 5px;
-      border-radius: 5%; }
+      border-radius: 5%;
+      -webkit-transition: all .7s ease-in-out;
+      -o-transition: all .7s ease-in-out;
+      transition: all .7s ease-in-out; }
     .card__face--img {
       width: 50%;
       height: 70%;
@@ -478,44 +490,16 @@ input {
       margin-left: 140px;
       margin-top: 100px; }
 
-#flip:checked + .backfaces .card__face--front {
+.card input:checked + .backfaces .card__face--front {
   -webkit-transform: translateX(-50%) rotateY(180deg);
   transform: translateX(-50%) rotateY(180deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
+  -webkit-transition: all .7s ease-in-out;
+  -o-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out; }
 
-#flip:checked + .backfaces .card__face--reverse {
+.card input:checked + .backfaces .card__face--reverse {
   -webkit-transform: rotateY(-360deg);
   transform: rotateY(-360deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
-
-#flip1:checked + .backfaces .card__face--front {
-  -webkit-transform: translateX(-50%) rotateY(180deg);
-  transform: translateX(-50%) rotateY(180deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
-
-#flip1:checked + .backfaces .card__face--reverse {
-  -webkit-transform: rotateY(-360deg);
-  transform: rotateY(-360deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
-
-#flip2:checked + .backfaces .card__face--front {
-  -webkit-transform: translateX(-50%) rotateY(180deg);
-  transform: translateX(-50%) rotateY(180deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
-
-#flip2:checked + .backfaces .card__face--reverse {
-  -webkit-transform: rotateY(-360deg);
-  transform: rotateY(-360deg);
-  -webkit-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  transition: all 1s ease-in; }
+  -webkit-transition: all .7s ease-in-out;
+  -o-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out; }
